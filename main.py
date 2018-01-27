@@ -174,6 +174,7 @@ def addEnemySpawnPoints():
 		createZombieSpawn(Gy, Gx, 'grave', graveTexture)
 
 def addItems():
+	global itemsLocation
 	itemsLocation = {}
 	x = random.randint(1, (maxX - 2))
 	y = random.randint(1, (maxY - 4))
@@ -317,7 +318,7 @@ def drawItems():
 			stdscr.addstr(itemsLocation[item][1], itemsLocation[item][2], "=", curses.color_pair(6))
 		elif itemsLocation[item][0] == 'grenade':
 			stdscr.addstr(itemsLocation[item][1], itemsLocation[item][2], "%", curses.color_pair(2))
-		else:
+		elif itemsLocation[item][0] == 'chest':
 			stdscr.addstr(itemsLocation[item][1], itemsLocation[item][2], "C", curses.color_pair(9))
 
 
